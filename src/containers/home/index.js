@@ -7,6 +7,7 @@ import SlackLogo from '../../assets/icons/Slack_Mark_Monochrome_White.svg'
 import TwitterLogo from '../../assets/icons/twitter.svg'
 import FacebookLogo from '../../assets/icons/facebook-icon-white.svg'
 import {Link} from 'react-router-dom'
+import {GITHUB_LINK, SLACK_LINK, FB_LINK, TW_LINK} from '../../actions/constants'
 
 class Home extends Component {
 
@@ -37,11 +38,15 @@ class Home extends Component {
                                         <Row center="xs">
                                             <Col>
                                                 <p>Join the conversation</p>
-                                                <img src={SlackLogo} alt='Slack'/>
+                                                <a href={SLACK_LINK} target='_blank'>
+                                                    <img src={SlackLogo} alt='Slack'/>
+                                                </a>
                                             </Col>
                                             <Col>
                                                 <p>Build the network</p>
-                                                <img src={GitHubLogo} alt='GitHub'/>
+                                                <a href={GITHUB_LINK} target='_blank'>
+                                                    <img src={GitHubLogo} alt='GitHub'/>
+                                                </a>
                                             </Col>
                                         </Row>
                                     </e.Oval>
@@ -51,8 +56,12 @@ class Home extends Component {
                     </Row>
                 </Grid>
                 <e.SocialMedia>
-                    <img src={TwitterLogo} alt='Twitter'/>
-                    <img src={FacebookLogo} alt='Facebook'/>
+                    <a href={TW_LINK} target='_blank'>
+                        <img src={TwitterLogo} alt='Twitter'/>
+                    </a>
+                    <a href={FB_LINK} target='_blank'>
+                        <img src={FacebookLogo} alt='Facebook'/>
+                    </a>
                 </e.SocialMedia>
                 <e.Button>
                     About

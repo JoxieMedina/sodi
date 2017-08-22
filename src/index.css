@@ -13,7 +13,7 @@ body {
 }
 
 body {
-  background-image: url(https://geoglimpsetravel.com/upload/Europe/Iceland/FallInLoveIceland/4/jonatan-pie-230118.jpg);
+  background-image: url('./assets/bg.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;

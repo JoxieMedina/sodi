@@ -32,7 +32,7 @@ img{
 }
 `
 
-export const Logo = styled.div`
+export const Logo = styled.div `
 top: 0;
 width: auto;
 position: absolute;
@@ -50,5 +50,9 @@ img{
     max-height: 37px;
     width: auto;
     cursor:pointer;
+}
+a{
+    text-decoration: none;
+    color: white;
 }
 `
