@@ -64,7 +64,7 @@ class Home extends Component {
                     </a>
                 </e.SocialMedia>
                 <e.Button>
-                    About
+                <Link to='/about'>About</Link>
                 </e.Button>
             </div>
         )

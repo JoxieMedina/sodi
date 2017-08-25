@@ -7,6 +7,7 @@ import store from './store'
 import registerServiceWorker from './registerServiceWorker'
 import {fetchFaq} from './actions/faqActions'
 import Donations from './containers/donations'
+import AboutPage from './containers/about'
 import './index.css'
 import './card.css'
 
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Switch>
             <Route path='/' exact component={App}/>
             <Route path='/donations' exact component={Donations}/>
+            <Route path='/about' exact component={AboutPage}/>
         </Switch>
     </BrowserRouter>
 </Provider>, document.getElementById('root'))
