@@ -8,6 +8,7 @@ import registerServiceWorker from './registerServiceWorker'
 import {fetchFaq} from './actions/faqActions'
 import Donations from './containers/donations'
 import './index.css'
+import './card.css'
 
 store.dispatch(fetchFaq())
 
