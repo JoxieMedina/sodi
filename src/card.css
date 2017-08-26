@@ -5,12 +5,12 @@
 
 .rccs,
 .rccs__card {
-    margin: 8px 25px;
-    width: 290px
+    margin: 8px 35px;
+    width: 250px
 }
 
 .rccs__card {
-    height: 182.873px;
+    height: 142.873px;
     position: relative;
     transition: all .4s linear
 }

@@ -79,6 +79,7 @@ export const nav = styled.div `
     padding-left:80px;
     button{
         padding: 7px;
+        margin-right:16px;
         width: 28px;
         font-size: 0.5em;
         border-radius: 50%;
@@ -88,6 +89,14 @@ export const nav = styled.div `
         color:white;
         display:inline-block;
         font-size:10px;
+    }
+    li{
+        width: 19px;
+        display: block;
+        height: 0px;
+        border: solid 1px #fcfafa;
+        position: absolute;
+        margin: -6px 0px 0px 19px;
     }
     
 `

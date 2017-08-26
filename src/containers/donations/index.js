@@ -205,7 +205,7 @@ class Donations extends Component {
                             <tbody>
                                 <tr>
                                     <th>
-                                        <e.Button onClick={() => this.setStepState(1)} selected={this.getStepState(1)}>1</e.Button>
+                                        <e.Button onClick={() => this.setStepState(1)} selected={this.getStepState(1)}>1 <li/></e.Button>
                                     </th>
                                     <th>
                                         <e.Button onClick={() => this.setStepState(2)} selected={this.getStepState(2)}>2</e.Button>
