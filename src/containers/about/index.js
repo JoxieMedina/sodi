@@ -8,9 +8,15 @@ import {connect} from 'react-redux'
 
 class AboutPage extends Component {
 
-    state={
-        expandedItem:-1
+    constructor(){
+        super()
+        this.state={
+            expandedItem:-1
+        }
+
+        this.handleKeyDown = this.handleKeyDown.bind(this)
     }
+
     getExpandedState(key) {
         return this.state.expandedItem === -1
             ? false
@@ -22,20 +28,58 @@ class AboutPage extends Component {
         :
         this.setState({expandedItem:key})        
     }
+    componentDidMount() {
+        window.addEventListener('keydown', this.handleKeyDown);
+      }
+    
+      componentWillUnmount() {
+        window.removeEventListener('keydown', this.handleKeyDown);
+      }
+    
+      /**
+       * left = 37
+            up = 38
+            right = 39
+            down = 40
+       * @param {*} e 
+       */
+      handleKeyDown(e) {
+        console.log('Key',e)
+      }
 
     render() {
        
         const {match, history,faqs} = this.props
         return (
             <div>
-                {match.url === '/about' && <div>
-                    <e.Title>About the initiative</e.Title>
-                    <e.GoalContainer>
-                        <h2>Our Goal</h2>
-                        <span/>
+                {match.url === '/about' && <div style={{marginTop: '11%'}} >
+                    <e.Title>Our Goal</e.Title>
+                    <e.GoalContainer>                        
                         <p>Our goal is to bring all scientific data under one open repository, to build
                             the science dataweb and solve the world's greatest interdisciplinary challenges</p>
+                            <button>
+                            <Link to='/about/initiative'>
+                                Learn More
+                            </Link>
+                            </button>
                     </e.GoalContainer>
+                    <Link to='/about/openData'>
+                        <e.Arrow bottom color={'ffffff'} angle={45}></e.Arrow>
+                    </Link>
+                    <Header/>
+                </div>
+            }
+            {match.params.section  === 'initiative' && <div style={{marginTop: '11%'}} >
+                    
+                    <e.IniContainer>                        
+                        <section>
+                            <h1>About the initiative</h1>
+                            <p>Scientific data is locked in knowledge silos, spread across countless disconnected databases on the web. Creating a high-level layer of interconnected concepts would build a bridge between these fragmented databases and dissolve knowledge silos. But there’s so much data out there that one team cannot build such a layer alone.
+                            <br/><br/>
+                            Founded by The Brane, SODI seeks to build a concept layer of high-level index terms and make it available to the whole world as the first-ever general purpose science dataweb. To do so, your help is needed. Which is why this project will be an entirely open-source collaborative effort, and the data will stay open to everyone.
+                            </p> 
+                        </section>                          
+                    </e.IniContainer>
                     <Link to='/about/openData'>
                         <e.Arrow bottom color={'ffffff'} angle={45}></e.Arrow>
                     </Link>
@@ -92,8 +136,10 @@ class AboutPage extends Component {
 
             {
                 match.params.section === 'faq' && <div>                    
+                <e.Arrow onClick={() => history.goBack()} style={{top: '100px',zIndex: 2}} color={'fff'} top angle={-135}></e.Arrow>
                     <e.FaqContainer>
-                        <e.Arrow onClick={() => history.goBack()} color={'fff'} top angle={-135}></e.Arrow>
+                        
+                        <h1>FAQ</h1>
                         {faqs.map(faq=>{
                         return(
                             <div key={faq.id} >

@@ -1,20 +1,19 @@
 import styled from 'styled-components'
 
 export const GoalContainer = styled.div `
-    width: 100%;
-    max-width: 850px;
-    height: 427px;
+    width: 100%;    
+    height: auto;
     background-color: rgba(80,116,156,0.9);
     margin: 0 auto;
-    top: 25%;
-    position: absolute;
+    top: 30%;
+    padding:50px 0;
     left: 0;
     right: 0;
     color:white;
     text-align:center;
     h2{
         padding: 61px 0px 0px 0px;
-        font-size: 1.3em;
+        font-size: 2em;
     }
     span{
         width: 76px;
@@ -23,12 +22,31 @@ export const GoalContainer = styled.div `
         border: solid 2px #fcfafa;
         margin: 0 auto;        
     }
+
+    button{
+        color: #ffffff;
+        cursor: pointer;
+        width: auto;
+        font-size: 1.2em;
+        border: solid #fff 1px;
+        border-radius: 5px;
+        background: transparent;
+        font-weight: 100;
+        padding: 5px 15px 5px 15px;
+        position: relative;
+        margin-top: 27px;
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
     
     
     
     p{
-        padding:50px;
-        font-size: 1.2em;
+        width: 784px;
+        margin: 0 auto;
+        font-size: 1.5em;
     }
   
 `
@@ -36,7 +54,7 @@ export const GoalContainer = styled.div `
 export const Title = styled.h1 `
     text-align: center;
     color: white;
-    font-size: 3em;
+    font-size: 4em;
     padding-top: 6%;
 `
 
@@ -92,7 +110,7 @@ export const WhiteWrapper = styled.div `
 export const FaqContainer = styled.div `
         overflow-y: scroll;
         width: 100%;
-        padding-left: 20px;
+        padding-left: 70px;
         height: 616px;
         background-color: rgba(80,116,156,0.9);
         margin: 0 auto;
@@ -103,9 +121,14 @@ export const FaqContainer = styled.div `
         color:white;
         text-align:left;
         padding-top: 61px;
+        h1{
+            text-align: left;
+            color: white;
+            font-size: 4em;                
+        }
         h2{
             
-            font-size: 1.5em;
+            font-size: 1.8em;
         }
         span{
             width: 76px;
@@ -143,4 +166,37 @@ export const FaqContainer = styled.div `
             `}
 
         }      
+ `
+
+ export const IniContainer = styled.div`
+        overflow-y: scroll;
+        width: 100%;
+        padding-left: 20px;
+        height: 100%;
+        background-color: rgba(80,116,156,0.9);
+        margin: 0 auto;
+        top: 10%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        color:white;
+        text-align:left;
+        padding-top: 61px;
+
+        section{
+            max-width:700px;
+            margin:0 auto;
+            text-align:left;
+                h1{
+                    text-align: left;
+                    color: white;
+                    font-size: 3.2em;                
+                }
+                p{
+                    font-size: 21px;
+                    font-weight: 100;
+                }
+            
+        }
+ 
  `

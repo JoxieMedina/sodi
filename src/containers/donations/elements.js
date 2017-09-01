@@ -6,16 +6,20 @@ export const Container = styled.div `
 `
 
 export const LeftPanel = styled.div `
-    padding: 70px;
-    width: 500px;
-    height: 100%;
+    width: 100%;
+    max-width: 550px;
+    height: 550px;
+    top: 16%;
     background-color: rgba(80, 116, 156, 0.9);
+    border-radius: 50%;
     position: absolute;
+    float: right;
+    left: 5%;
     p{
-        font-size: 2.4em;
+        font-size: 2em;
         font-weight: 100;
-        padding: 0px 60px 0px 59px;
-        text-align: justify;
+        padding: 64px 73px 0px 60px;
+        text-align: center;
         color: white;
         
     }

@@ -1,15 +1,18 @@
 @font-face {
   font-family: 'helvetica_neue_light';
-  src: url('./fonts/helveticaneue-light-webfont.eot');
-  src: url('./fonts/helveticaneue-light-webfont.eot') format('embedded-opentype'), url('./fonts/helveticaneue-light-webfont.woff') format('woff'), url('./fonts/helveticaneue-light-webfont.ttf') format('truetype'), url('./fonts/helveticaneue-light-webfont.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
+  src: url('./fonts/HelveticaNeueLTStd-Lt.otf');
+  /* src: url('./fonts/helveticaneue-light-webfont.eot') format('embedded-opentype'), url('./fonts/helveticaneue-light-webfont.woff') format('woff'), url('./fonts/helveticaneue-light-webfont.ttf') format('truetype'), url('./fonts/helveticaneue-light-webfont.svg') format('svg'); */
+ 
 }
 
 html,
 body {
   height: 100%;
   font-family: 'helvetica_neue_light',sans-serif;
+}
+
+h1,h2,h3,h5,p{
+  font-weight: 100;
 }
 
 body {
