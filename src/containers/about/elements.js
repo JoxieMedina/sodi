@@ -41,12 +41,24 @@ export const GoalContainer = styled.div `
         }
     }
     
-    
-    
     p{
         width: 784px;
         margin: 0 auto;
         font-size: 1.5em;
+    }
+    @media (max-width: 800px) {
+        p{
+            width: 600px;
+            margin: 0 auto;
+            font-size: 1.5em;
+        }
+    }
+    @media (max-width: 580px) {
+        p{
+            width: 100%;
+            margin: 0 auto;
+            font-size: 1.1em;
+        }
     }
   
 `
@@ -56,6 +68,14 @@ export const Title = styled.h1 `
     color: white;
     font-size: 4em;
     padding-top: 6%;
+    @media (max-width: 800px) {
+        padding-top: 20%;
+        font-size: 3em;      
+    }
+    @media (max-width: 580px) {
+        
+        font-size: 2em;      
+    }
 `
 
 export const Arrow = styled.i `
@@ -69,11 +89,18 @@ export const Arrow = styled.i `
     height: 30px;
     width: 30px;
     left: 50%;
+    @media (max-width: 580px) {
+        
+        left: 46%;  
+    }
     ${props => props.top && `
     top: 5%;
     `}
     ${props => props.bottom && `
     bottom: 5%;
+    @media (max-width: 580px) {
+        bottom: -9%;
+    }
     `}
     
     position: absolute;
@@ -91,6 +118,16 @@ export const WhiteWrapper = styled.div `
         background-color: #ffffff;
         color: #50749c;
         padding-top: 150px;
+        @media (max-width: 580px) {
+            padding-top: 40px;
+            img{
+                padding-top: 0px !important;
+            }
+            p{
+                background: white;
+                font-size: 1em;
+            }
+        }
         span{
             width: 76px;
             display: block;
@@ -188,15 +225,37 @@ export const FaqContainer = styled.div `
             margin:0 auto;
             text-align:left;
                 h1{
+                    padding-right: 60px;
                     text-align: left;
                     color: white;
                     font-size: 3.2em;                
                 }
                 p{
+
+                    padding-right: 60px;
                     font-size: 21px;
                     font-weight: 100;
                 }
             
+        }
+
+        @media (max-width: 580px) {            
+            top: 16%;
+            padding-top:0px;
+            padding-left: 0px;
+            
+            section{
+                padding-left: 10px;
+                padding-right: 10px;
+                    padding-bottom: 60px;
+            
+                h1{
+                    font-size:2em;
+                }
+                p{
+                    font-size:15px;
+                }
+            }
         }
  
  `

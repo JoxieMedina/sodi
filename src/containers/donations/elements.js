@@ -23,6 +23,57 @@ export const LeftPanel = styled.div `
         color: white;
         
     }
+    button{
+        display:none;
+    }
+
+    @media (max-width: 1200px) {
+        max-width: 450px;
+        height: 450px;
+        top: 20%;
+        p{
+            font-size:1.5em;
+            padding: 79px 73px 0px 60px;
+        }
+    }
+
+    @media (max-width: 910px) {
+        ${props => props.showForm
+    ? `
+    display:none;    
+        `
+    : `
+    display:inline;
+        `}
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        p{
+            padding: 65px 38px 0px 33px;
+        }
+        button{
+            display:inline;
+            margin: 0px 38%;
+        }
+    }
+
+    @media (max-width: 456px) {
+        max-width: 100%;
+        height: 100%;
+        top: 17%;
+        border: 0;
+        border-radius:0;
+        text-align: center;
+        p {
+            padding: 0px 5px 0px 5px;
+            font-size: 1.4em;
+        }
+        button{
+            margin:0 auto;
+        }
+    }
+
+
 `
 
 export const Circle = styled.div `
@@ -37,7 +88,7 @@ export const Circle = styled.div `
         right: 5%;
         h2{
             text-align: center;
-            padding: 18px;
+            padding: 35px 41px 0px 0px;
             color: white;
         }
         p{            
@@ -45,14 +96,72 @@ export const Circle = styled.div `
             font-size: 20px;                       
             color: #ffffff;
         }
+        section{
+            padding-left: 60px;
+        }
+       
         input{
             padding: 9px;
             border-radius: 5px;
             border: 0;
             font-size: 1em;
+            margin-right: 5px;
             :focus {
                 outline: none;
             }
+        }
+        @media (max-width: 1200px) {
+            max-width: 450px;
+            height: 450px;
+            top: 20%;
+    
+        }
+        @media (max-width: 456px) {
+            max-width: 100%;
+            height: 100%;
+            top: 17%;
+            border: 0;
+            h2{
+                text-align: center;
+                padding: 0px !important;
+                color: white;
+            }
+            .rccs,
+            .rccs__card {
+                margin: 0 auto;
+                
+            }
+            table{
+                margin: 0;
+            }
+            button{
+                margin: 0px 5px 0px 5px;
+                padding:5px;
+            }
+            input{
+                margin: 5px auto;
+                width: 80%;
+                padding: 9px;
+                border-radius: 5px;
+                border: 0;
+                font-size: 1em;
+            }
+            section{
+                padding-left:10px !important;
+            }
+        }
+        @media (max-width: 910px) {
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+        ${props => props.showForm
+    ? `
+        display:inline;
+        `
+    : `
+        display:none;
+        `}
+           
         }
        
 `
@@ -80,7 +189,9 @@ export const Button = styled.button `
 
 export const nav = styled.div `
     padding-top:18px;
-    padding-left:80px;
+    table{
+        margin: 0 auto;
+    }
     button{
         padding: 7px;
         margin-right:16px;
@@ -102,5 +213,11 @@ export const nav = styled.div `
         position: absolute;
         margin: -6px 0px 0px 19px;
     }
-    
+   
+    @media (max-width: 456px) {
+        li{
+            width: 24px;
+            margin: -6px 0px 0px 19px;
+        }
+    }
 `

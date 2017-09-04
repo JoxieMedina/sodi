@@ -30,3 +30,8 @@ body {
   margin: 0;
   padding: 0;
 }
+@media (max-width: 456px) {
+  body{
+      overflow-y:scroll;
+  }
+}

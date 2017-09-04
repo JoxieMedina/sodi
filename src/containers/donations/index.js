@@ -14,7 +14,12 @@ class Donations extends Component {
         name: '',
         exp: '',
         cvc: '',
-        focused: ''
+        focused: '',
+        showForm:false,
+    }
+
+    toggleShowForm(){
+        this.setState({showForm:!this.state.showForm})
     }
 
     getFrequencyState(type) {
@@ -70,24 +75,22 @@ class Donations extends Component {
     }
 
     render() {
-        const {name, number, expiry, cvc, focused} = this.state;
+        const {name, number, expiry, cvc, focused,showForm} = this.state;
         return (
             <e.Container>
-                <e.LeftPanel>
+                <e.LeftPanel showForm={showForm} >
                     <p>
                         With your<strong> donation</strong>, the critical back-end infrastructure may be scaled to
                         unite the world’s scientific data repos in one open access database, to help
                         scientists push the boundaries of human knowledge, and solve the most urgent
                         problems of our age.
                     </p>
+                    <e.Button onClick={()=>this.toggleShowForm()} >Donate</e.Button>
                 </e.LeftPanel>
-                <e.Circle>
-                    {this.state.step === 1 && <div>
+                <e.Circle showForm={showForm}>
+                    {this.state.step === 1 && <section>
                         <h2>DONATION AMOUNT</h2>
-                        <div
-                            style={{
-                            paddingLeft: '80px'
-                        }}>
+                        <div>
                             <p>Frequency</p>
                             <e.Button
                                 onClick={() => this.setFrequencyState(0)}
@@ -100,10 +103,7 @@ class Donations extends Component {
                                 onClick={() => this.setFrequencyState(2)}
                                 selected={this.getFrequencyState(2)}>Yearly</e.Button>
                         </div>
-                        <div
-                            style={{
-                            paddingLeft: '80px'
-                        }}>
+                        <div>
                             <table>
                                 <tbody>
                                     <tr>
@@ -130,15 +130,12 @@ class Donations extends Component {
                             </table>
 
                         </div>
-                    </div>
+                    </section>
 }
 
                     {this.state.step === 2 && <div>
-                        <h2>ACCOUNT DETAILS</h2>
-                        <div
-                            style={{
-                            paddingLeft: '80px'
-                        }}>
+                        <h2 style={{padding: '35px 0px 0px 0px'}} >ACCOUNT DETAILS</h2>
+                        <section style={{paddingLeft: '33px'}} >
                             <Cards
                                 number={number}
                                 name={name}
@@ -152,9 +149,6 @@ class Donations extends Component {
                                         <tr>
                                             <th>
                                                 <input
-                                                    style={{
-                                                    marginRight: '5px'
-                                                }}
                                                     type="tel"
                                                     name="number"
                                                     placeholder="Card Number"
@@ -171,9 +165,6 @@ class Donations extends Component {
                                         <tr>
                                             <th>
                                                 <input
-                                                    style={{
-                                                    marginRight: '5px'
-                                                }}
                                                     type="tel"
                                                     name="expiry"
                                                     placeholder="Valid Exp. Date"
@@ -191,12 +182,12 @@ class Donations extends Component {
                                 </table>
                                 <e.Button
                                     style={{
-                                    margin: '3px'
+                                    margin: '2px 36%'
                                 }}
                                     selected>Send</e.Button>
                             </form>
 
-                        </div>
+                        </section>
                     </div>
 }
 

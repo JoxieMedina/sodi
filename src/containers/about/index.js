@@ -52,7 +52,7 @@ class AboutPage extends Component {
         const {match, history,faqs} = this.props
         return (
             <div>
-                {match.url === '/about' && <div style={{marginTop: '11%'}} >
+                {match.url === '/about' && <div style={{marginTop: '10%'}} >
                     <e.Title>Our Goal</e.Title>
                     <e.GoalContainer>                        
                         <p>Our goal is to bring all scientific data under one open repository, to build
@@ -92,7 +92,7 @@ class AboutPage extends Component {
 
                     <Grid>
                         <Row center="xs">
-                            <Col xs={5}>
+                            <Col xs={12}>
                                 <h2>Why Open Science Data Access?</h2>
                                 <span/>
                             </Col>
@@ -102,10 +102,10 @@ class AboutPage extends Component {
                             paddingTop: '31px'
                         }}
                             center="xs">
-                            <Col xs={5}>
+                            <Col xs={12} md={5}>
                                 <img width={'40%'} src={OpenAccessLogo} alt='OpenAccessLogo'/>
                             </Col>
-                            <Col xs={4}>
+                            <Col xs={12} md={4}>
                                 <p>
                                     With datasets growing larger and larger, researchers are finding that the
                                     bottleneck to discovery is no longer a lack of data but an inability to manage,

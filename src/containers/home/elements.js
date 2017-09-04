@@ -5,7 +5,7 @@ padding-top: 130px;
     img{
         width: 64px;
         display: inline-block;
-        padding: 9px 25px 13px 0px;
+        padding: 9px 25px 13px 0px;       
     }
 
    div{
@@ -24,7 +24,33 @@ padding-top: 130px;
         text-align: left;
         color: #ffffff;
     }
+
    }
+
+   @media (max-width: 992px) {
+        img{
+            width: 48px;         
+            padding: 0px 15px 0px 0px;
+        }
+        div{
+            h1{
+                font-size: 30px;
+            }
+        }
+    }
+    @media (max-width: 636px) {
+       
+        div{
+            h1{
+                font-size: 20px;
+                text-align:center;
+            }
+            p{
+                font-size:15px;
+                text-align:center;
+            }
+        }
+    }
 `
 
 export const Button = styled.button `
@@ -40,10 +66,17 @@ export const Button = styled.button `
             position: absolute;
             right: 40px;
             ${props => props.top
-    ? `
+            ? `
                 top: 50px;
-                `
-    : `bottom: 50px;`}
+                        `
+            : `bottom: 50px;
+            @media (max-width: 921px) {
+                top: 50px;
+                left:40px;
+                bottom: auto;
+                right:auto;
+            }
+            `}
 
     a{
         text-decoration: none;
@@ -84,11 +117,40 @@ export const Oval = styled.div `
             text-align: center;
             color: #ffffff;
         }
+        @media (max-width: 570px) {
+            height: 570px;
+           h6{
+            font-size: 20px;
+            padding-top: 105px;
+           }
+           p{
+            padding:30px 56px 10px 56px;
+           }
+        }
+        @media (max-width: 442px) {            
+            height: 180px;
+            border: solid 3px rgb(255,255,255);
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            border-bottom-width: 0;
+            border-left-width: 0;
+            border-right-width: 0;
+            bottom: 0;
+            h6{
+                max-width: 238px;
+                font-size: 15px;
+                padding-top: 30px;
+            }
+          
+           p{
+            padding:2px 11px 4px 11px;
+           }
+        }
 `
 
 export const SocialMedia = styled.div `
         bottom: 0;
-        width: 100px;
+        width: auto;
         position: absolute;
         padding: 20px;
         left: 0;
