@@ -102,10 +102,10 @@ class AboutPage extends Component {
                             paddingTop: '31px'
                         }}
                             center="xs">
-                            <Col xs={12} md={5}>
+                            <Col xs={12} md={5} sm={5} >
                                 <img width={'40%'} src={OpenAccessLogo} alt='OpenAccessLogo'/>
                             </Col>
-                            <Col xs={12} md={4}>
+                            <Col xs={12} md={4} sm={4}>
                                 <p>
                                     With datasets growing larger and larger, researchers are finding that the
                                     bottleneck to discovery is no longer a lack of data but an inability to manage,

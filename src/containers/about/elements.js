@@ -118,16 +118,7 @@ export const WhiteWrapper = styled.div `
         background-color: #ffffff;
         color: #50749c;
         padding-top: 150px;
-        @media (max-width: 580px) {
-            padding-top: 40px;
-            img{
-                padding-top: 0px !important;
-            }
-            p{
-                background: white;
-                font-size: 1em;
-            }
-        }
+       
         span{
             width: 76px;
             display: block;
@@ -142,16 +133,31 @@ export const WhiteWrapper = styled.div `
         img{
             padding-top: 66px;
         }
+        @media (max-width: 580px) {
+            padding-top: 50px;
+            height: 800px;
+            img{
+                padding-top: 0px !important;
+            }
+            p{
+                background: white;
+                text-align: left;
+                font-size: 1em;
+                padding: 10px;
+            }
+          
+        }
+        
  `
 
 export const FaqContainer = styled.div `
         overflow-y: scroll;
         width: 100%;
-        padding-left: 70px;
+        padding-left: 5%;
         height: 616px;
         background-color: rgba(80,116,156,0.9);
         margin: 0 auto;
-        top: 10%;
+        top: 15%;
         position: absolute;
         left: 0;
         right: 0;
@@ -174,11 +180,20 @@ export const FaqContainer = styled.div `
             border: solid 2px #fcfafa;
             margin: 0 auto;        
         }
+        @media (max-width: 580px) {
+       
+            
+                h1{
+                    font-size: 2.3em;   
+                }
+                
+            
+        }
 
        
  `
 
- export const CollapseItem = styled.div`
+export const CollapseItem = styled.div `
         h5{
             font-size: 1.2em;
             margin: 0;
@@ -190,22 +205,27 @@ export const FaqContainer = styled.div `
 
         p{
             font-size: 1em;
-            padding-right: 50px;
+            
             padding-left: 25px;
-            margin: 10px;
+            margin-top: 10px;
             height:auto;
-            max-height: 250px;
+            width:80%;
+            // max-height: 250px;
             transition: 0.5s all;
-            ${props=>props.expanded === false &&
-            `
+            ${props => props.expanded === false && `
             max-height: 0;
             color: transparent;
             `}
 
         }      
+        @media (max-width: 580px) {
+                p{
+                    padding-left: 5px;   
+                }
+             }
  `
 
- export const IniContainer = styled.div`
+export const IniContainer = styled.div `
         overflow-y: scroll;
         width: 100%;
         padding-left: 20px;
