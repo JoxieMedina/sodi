@@ -65,8 +65,8 @@ export const LeftPanel = styled.div `
         border-radius:0;
         text-align: center;
         p {
-            padding: 0px 5px 0px 5px;
-            font-size: 1.4em;
+            padding: 55px 20px 9px 20px;
+            font-size: 1em;
         }
         button{
             margin:0 auto;

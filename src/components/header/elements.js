@@ -6,7 +6,7 @@ ${props => props.top
     top: 0;
     right: 0;
     padding: 30px 20px;
-    padding-right: 0;
+    padding-right: 10;
     @media (max-width: 750px) {
         top:auto;
         bottom: 0;
@@ -59,13 +59,23 @@ a{
     text-decoration: none;
     color: white;
 }
+
+@media(max-width:570px){
+    img{
+        margin: 0px 10px -9px 0px;
+        max-height: 30px;
+    }
+    h1{
+        font-size:17px;
+    }
+}
 `
 
 export const Nav = styled.div `
     top: 7px;
     width: auto;
-    position: absolute;
-    padding: 20px;
+    position: fixed;
+    padding-top: 20px;
     left: 99px;
     button{
         display:none;
@@ -81,27 +91,29 @@ export const Nav = styled.div `
         display:inline-block;
         text-decoration: none;
         color: white;
+        cursor:pointer;
         padding-left: 50px;
         :hover{
             opacity:0.8;
         }
     }
     img{
-        max-width:50px;
+        max-width:30px;
     }
     a + a + a + a{
-        padding-left: 250px;
+        margin-left: 250px;
     }
 
     @media (max-width: 940px) {
         a + a + a + a{
-            padding-left: 50px;
+            margin-left: 50px;
         }
     }
     @media (max-width: 750px) {
         right: 0;
         left: auto;
         padding:0;
+        position: fixed;
         text-align:right;
     button{
         display:inline;
@@ -122,6 +134,7 @@ export const Nav = styled.div `
         background: rgba(80,116,156,0.9);
         h1{
          text-align:right;
+         font-size: 17px;
         }
         a{
              display:block;

@@ -1,11 +1,37 @@
 import styled from 'styled-components'
 
+export const Container = styled.div`
+
+    #about , #initiative,#openData
+    ,#faq {
+        height: 100vh;    
+    }
+    #about{
+        padding-top: 100px;
+    }
+    #initiative{
+        padding-top: 0px; 
+    }
+    #faq{
+        padding-top: 0px; 
+    }
+
+
+    @media (max-width:570px){
+        #about{
+            padding-top:30px;
+        }
+      
+    }
+
+`
+
 export const GoalContainer = styled.div `
     width: 100%;    
     height: auto;
     background-color: rgba(80,116,156,0.9);
     margin: 0 auto;
-    top: 30%;
+    padding-top: 30%;
     padding:50px 0;
     left: 0;
     right: 0;
@@ -55,9 +81,13 @@ export const GoalContainer = styled.div `
     }
     @media (max-width: 580px) {
         p{
-            width: 100%;
+            width: 90%;
             margin: 0 auto;
-            font-size: 1.1em;
+            font-size: 0.9em;
+        }
+        button{
+            font-size: 1em;
+            padding:5px 10px 5px 10px;
         }
     }
   
@@ -69,12 +99,13 @@ export const Title = styled.h1 `
     font-size: 4em;
     padding-top: 6%;
     @media (max-width: 800px) {
-        padding-top: 20%;
+        padding-top: 10%;
         font-size: 3em;      
     }
     @media (max-width: 580px) {
         
-        font-size: 2em;      
+        font-size: 1.6em;
+        
     }
 `
 
@@ -89,9 +120,11 @@ export const Arrow = styled.i `
     height: 30px;
     width: 30px;
     left: 50%;
+    position: relative;
     @media (max-width: 580px) {
-        
-        left: 46%;  
+        display:none;
+        top:unset;
+        bottom:unset;
     }
     ${props => props.top && `
     top: 5%;
@@ -99,11 +132,10 @@ export const Arrow = styled.i `
     ${props => props.bottom && `
     bottom: 5%;
     @media (max-width: 580px) {
-        bottom: -9%;
+        bottom: 9%;
     }
     `}
-    
-    position: absolute;
+   
     transform: ${props => `rotate(${props.angle}deg)`}
 `
 
@@ -111,13 +143,20 @@ export const Arrow = styled.i `
  * Open Data Styles
  */
 
+export const White = styled.div`
+    padding-top:70px;
+    @media(max-width:570px){   
+        padding-top: 0;
+     }
+
+`
+
 export const WhiteWrapper = styled.div `
         width: 100%;
-        height: 100%;
-        position: absolute;
+        height: 100vh;
+        position: relative;
         background-color: #ffffff;
-        color: #50749c;
-        padding-top: 150px;
+        color: #50749c;        
        
         span{
             width: 76px;
@@ -134,10 +173,12 @@ export const WhiteWrapper = styled.div `
             padding-top: 66px;
         }
         @media (max-width: 580px) {
-            padding-top: 50px;
-            height: 800px;
+            // height: 800px;
+            margin-top: 66px;
+            
             img{
                 padding-top: 0px !important;
+                width: 50px;
             }
             p{
                 background: white;
@@ -150,20 +191,31 @@ export const WhiteWrapper = styled.div `
         
  `
 
-export const FaqContainer = styled.div `
-        overflow-y: scroll;
+ export const Pre = styled.div`
+ background-color: rgba(80,116,156,0.9);
+ padding:50px;
+ padding-top:0;
+ margin-top: 25px;
+
+ @media(max-width:570px){    
+    padding: 25px;
+    padding-top: 0;
+    margin-top: 66px;
+    position: relative;
+ }
+
+ `
+
+export const FaqContainer = styled.div `        
         width: 100%;
-        padding-left: 5%;
-        height: 616px;
-        background-color: rgba(80,116,156,0.9);
-        margin: 0 auto;
-        top: 15%;
-        position: absolute;
+        height: auto;
+        margin: 0 auto;        
+        position: relative;
         left: 0;
         right: 0;
         color:white;
         text-align:left;
-        padding-top: 61px;
+        padding-top: 40px;
         h1{
             text-align: left;
             color: white;
@@ -184,8 +236,12 @@ export const FaqContainer = styled.div `
        
             
                 h1{
-                    font-size: 2.3em;   
+                    font-size: 2em;   
                 }
+                h2{
+                    font-size: 1.5em;   
+                }
+               
                 
             
         }
@@ -205,12 +261,9 @@ export const CollapseItem = styled.div `
 
         p{
             font-size: 1em;
-            
-            padding-left: 25px;
             margin-top: 10px;
             height:auto;
             width:80%;
-            // max-height: 250px;
             transition: 0.5s all;
             ${props => props.expanded === false && `
             max-height: 0;
@@ -221,24 +274,27 @@ export const CollapseItem = styled.div `
         @media (max-width: 580px) {
                 p{
                     padding-left: 5px;   
+                    font-size: 0.8em;
+                    width: 100%;
+                }
+                h5{
+                    font-size: 1em;   
                 }
              }
  `
 
-export const IniContainer = styled.div `
-        overflow-y: scroll;
+export const IniContainer = styled.div `        
         width: 100%;
-        padding-left: 20px;
         height: 100%;
         background-color: rgba(80,116,156,0.9);
         margin: 0 auto;
-        top: 10%;
-        position: absolute;
+        
+        position: relative;
         left: 0;
         right: 0;
         color:white;
         text-align:left;
-        padding-top: 61px;
+        padding-top: 110px;
 
         section{
             max-width:700px;
@@ -260,20 +316,23 @@ export const IniContainer = styled.div `
         }
 
         @media (max-width: 580px) {            
-            top: 16%;
-            padding-top:0px;
+            padding-top: 20%;
             padding-left: 0px;
             
             section{
-                padding-left: 10px;
-                padding-right: 10px;
-                    padding-bottom: 60px;
+                padding-left: 33px;
+                padding-right: 18px;
+                padding-bottom: 60px;
             
                 h1{
-                    font-size:2em;
+                    font-size: 1.6em;
+                    margin: 0;
+                    padding-top: 15px;
                 }
                 p{
                     font-size:15px;
+                    padding-right: 0;
+                    margin: 0;
                 }
             }
         }

@@ -1,39 +1,39 @@
-import React, {Component} from 'react'
+import React,{Component} from 'react'
 import SodiLogo from '../../assets/icons/logo-sodi-v-2@3x.png'
 import GitHubLogo from '../../assets/icons/github-icon-1.svg'
 import SlackLogo from '../../assets/icons/Slack_Mark_Monochrome_White.svg'
 import MenuIcon from '../../assets/icons/menu.svg'
-import CloseIcon from '../../assets/icons/error.svg'
+import CloseIcon  from '../../assets/icons/error.svg'
 import TwitterLogo from '../../assets/icons/twitter.svg'
-import SScroll from '../../containers/about/SScroll'
+// import FacebookLogo from '../../assets/icons/facebook-icon-white.svg'
 import * as e from './elements'
 import {Link} from 'react-router-dom'
 import {GITHUB_LINK, SLACK_LINK, TW_LINK} from '../../actions/constants'
-class Header extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            showMenu: false
+import SScroll from '../../containers/about/SScroll'
+class Header extends Component{
+    constructor(){
+        super()
+        this.state={
+            showMenu:false
         }
         this.scrollMan = new SScroll({})
-        this.toggleMenu = this
-            .toggleMenu
-            .bind(this)
-
-            this.goTo = this.goTo.bind(this)
+        this.toggleMenu = this.toggleMenu.bind(this)
+        this.goTo = this.goTo.bind(this)
+        
     }
 
-    toggleMenu() {
-        this.setState({
-            showMenu: !this.state.showMenu
-        })
+    toggleMenu(){
+        this.setState({showMenu:!this.state.showMenu})
     }
     goTo(id){
-        this.scrollMan.scrollTo(id)
-        this.toggleMenu()
-   }
-    render() {
-        // console.log('Header props: ',this.props)
+        this.props.history.push('/about')
+        setTimeout(()=> {
+            this.scrollMan.scrollTo(id)
+        }, 300);
+
+    }
+    render(){     
+         
         return (
             <div>
                 <e.Logo>
@@ -41,19 +41,15 @@ class Header extends Component {
                         <h1><img src={SodiLogo} alt='Logo'/>SODI</h1>
                     </Link>
                 </e.Logo>
-
+                
                 <e.Nav show={this.state.showMenu}>
-                    <button onClick={this.toggleMenu}>
-                        <img
-                            src={this.state.showMenu
-                            ? CloseIcon
-                            : MenuIcon}
-                            alt='menu'/>
+                <button onClick={this.toggleMenu}>
+                        <img src={this.state.showMenu?CloseIcon:MenuIcon} alt='menu'/>
                     </button>
                     <div>
-                        <a onClick={()=>{this.goTo('about')}}>
+                        <Link to='/about' replace>
                             <h1>About</h1>
-                        </a>
+                        </Link>
                         <a onClick={()=>this.goTo('openData')}>
                             <h1>Open access</h1>
                         </a>

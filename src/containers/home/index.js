@@ -21,7 +21,7 @@ class Home extends Component {
                     <Row>
                         <Col xs={12}>
                             <Row center="xs">
-                                <Col xs={9}>
+                                <Col xs={12}>
                                     <e.HeaderTitle>
                                         <img src={SodiLogo} alt='SODI'/>
                                         <div>
@@ -38,13 +38,13 @@ class Home extends Component {
                                         <Row center="xs">
                                             <Col>
                                                 <p>Join the conversation</p>
-                                                <a href={SLACK_LINK} target='_blank'>
+                                                <a rel="noopener" href={SLACK_LINK} target='_blank'>
                                                     <img src={SlackLogo} alt='Slack'/>
                                                 </a>
                                             </Col>
                                             <Col>
                                                 <p>Build the network</p>
-                                                <a href={GITHUB_LINK} target='_blank'>
+                                                <a rel="noopener" href={GITHUB_LINK} target='_blank'>
                                                     <img src={GitHubLogo} alt='GitHub'/>
                                                 </a>
                                             </Col>
@@ -56,10 +56,10 @@ class Home extends Component {
                     </Row>
                 </Grid>
                 <e.SocialMedia>
-                    <a href={TW_LINK} target='_blank'>
+                    <a rel="noopener" href={TW_LINK} target='_blank'>
                         <img src={TwitterLogo} alt='Twitter'/>
                     </a>
-                    {/* <a href={FB_LINK} target='_blank'>
+                    {/* <a rel="noopener" href={FB_LINK} target='_blank'>
                         <img src={FacebookLogo} alt='Facebook'/>
                     </a> */}
                 </e.SocialMedia>

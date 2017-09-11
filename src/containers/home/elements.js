@@ -32,25 +32,36 @@ padding-top: 130px;
             width: 48px;         
             padding: 0px 15px 0px 0px;
         }
-        div{
+        div{ 
             h1{
                 font-size: 30px;
             }
         }
     }
-    @media (max-width: 636px) {
-       
-        div{
-            h1{
-                font-size: 20px;
-                text-align:center;
-            }
-            p{
-                font-size:15px;
-                text-align:center;
-            }
+
+
+    @media (max-width: 570px) {
+        padding-top:75px;
+      img{
+          width:30px;
+          padding: 0 5px 0px 0px;
+      }
+     div{
+        h1{
+            font-size: 18px;
+            text-align:left;
         }
+        p{
+            font-size:12px;
+            text-align:left;
+        }
+     }
+      
+       }
     }
+
+
+
 `
 
 export const Button = styled.button `
@@ -64,15 +75,15 @@ export const Button = styled.button `
             font-weight: 100;
             padding: 5px 15px 5px 15px;
             position: absolute;
-            right: 40px;
+            right: 70px;
             ${props => props.top
-            ? `
+    ? `
                 top: 50px;
                         `
-            : `bottom: 50px;
+    : `bottom: 50px;
             @media (max-width: 921px) {
                 top: 50px;
-                left:40px;
+                left:70px;
                 bottom: auto;
                 right:auto;
             }
@@ -82,19 +93,28 @@ export const Button = styled.button `
         text-decoration: none;
         color: white;
     }
+
+    @media(max-width:570px){
+        font-size: 1em;
+        padding: 5px 10px 5px 10px;
+        position: absolute;        
+        top: 125px;
+    }
             
 `
 
 export const Oval = styled.div `
         width: 100%;
         max-width: 663px;
-        height: 663px;
+        height: 350px;
         margin: 0 auto;
-        bottom: -300px;
+        bottom: 0;
         left: 0;
         right: 0;
-        border: solid 2px rgb(255, 255, 255);
-        border-radius: 50%;
+        border: solid 2px rgb(255,255,255);
+        border-top-left-radius: 332px;
+        border-top-right-radius: 332px;
+        border-bottom: 0;
         position: absolute;
         h6{
             font-size: 27px;
@@ -118,7 +138,7 @@ export const Oval = styled.div `
             color: #ffffff;
         }
         @media (max-width: 570px) {
-            height: 570px;
+            
            h6{
             font-size: 20px;
             padding-top: 105px;
@@ -128,22 +148,31 @@ export const Oval = styled.div `
            }
         }
         @media (max-width: 442px) {            
-            height: 180px;
-            border: solid 3px rgb(255,255,255);
-            border-top-left-radius: 100%;
-            border-top-right-radius: 100%;
+            height: 170px;
+            border: solid 2px rgb(255,255,255);
+            max-width: 300px;
+            border-top-left-radius: 150px;
+            border-top-right-radius: 150px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
             border-bottom-width: 0;
-            border-left-width: 0;
-            border-right-width: 0;
             bottom: 0;
-            h6{
-                max-width: 238px;
-                font-size: 15px;
-                padding-top: 30px;
+            margin: 0 auto;
+            h6{ 
+                
+                max-width: 250px;
+                padding-bottom: 11px;
+                font-size: 13px;
+                padding-top: 60px;
+            }
+
+            img{
+                max-width: 30px;
             }
           
            p{
             padding:2px 11px 4px 11px;
+            font-size: 13px;
            }
         }
 `
@@ -159,6 +188,13 @@ export const SocialMedia = styled.div `
             max-height: 18px;
             width: 18px;
             cursor:pointer;
+        }
+
+        @media (max-width: 570px) {
+            right:0;
+            top:0;
+            left: unset;
+            bottom:unset;
         }
 
 `

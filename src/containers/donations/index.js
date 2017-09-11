@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Header from '../../components/header'
+import Header from '../../components/header/header2'
 import * as e from './elements'
 import Cards from 'react-credit-cards'
 
@@ -75,7 +75,7 @@ class Donations extends Component {
     }
 
     render() {
-        const {name, number, expiry, cvc, focused,showForm} = this.state;
+        const {name, number, expiry, cvc, focused,showForm} = this.state;        
         return (
             <e.Container>
                 <e.LeftPanel showForm={showForm} >
@@ -124,7 +124,7 @@ class Donations extends Component {
                                                 onClick={() => this.setCurrencyState(1)}
                                                 selected={this.getCurrencyState(1)}>€</e.Button>
                                         </td>
-                                        <td><input type="number" placeholder="Enter amount"/></td>
+                                        <td><input type="tel" placeholder="Enter amount"/></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -216,7 +216,7 @@ class Donations extends Component {
                     </e.nav>
                 </e.Circle>
 
-                <Header/>
+                <Header history={this.props.history} />
             </e.Container>
         )
     }
