@@ -73,18 +73,18 @@ class AboutPage extends Component {
                             </a>
                         </button>
                     </e.GoalContainer>
-                    <a onClick={() => this.goTo('openData')}>
+                    {/* <a onClick={() => this.goTo('openData')}>
                         <e.Arrow bottom color={'ffffff'} angle={45}></e.Arrow>
-                    </a>
+                    </a> */}
 
                 </div>
 
                 <div id='initiative'>
 
                     <e.IniContainer>
-                        <a onClick={() => this.goTo('about')}>
+                        {/* <a onClick={() => this.goTo('about')}>
                             <e.Arrow color={'fff'} top angle={-135}></e.Arrow>
-                        </a>
+                        </a> */}
                         <section>
                             <h1>About the initiative</h1>
                             <p>Scientific data is locked in knowledge silos, spread across countless
@@ -99,9 +99,9 @@ class AboutPage extends Component {
                                 be an entirely open-source collaborative effort, and the data will stay open to
                                 everyone.
                             </p>
-                            <a onClick={() => this.goTo('openData')}>
+                            {/* <a onClick={() => this.goTo('openData')}>
                                 <e.Arrow bottom color={'ffffff'} angle={45}></e.Arrow>
-                            </a>
+                            </a> */}
                         </section>
 
                     </e.IniContainer>
@@ -111,9 +111,9 @@ class AboutPage extends Component {
                 <div id='openData'>
                     <e.WhiteWrapper>
                         <e.White >
-                            <a onClick={() => this.goTo('initiative')}>
+                            {/* <a onClick={() => this.goTo('initiative')}>
                                 <e.Arrow color={'50749c'} top angle={-135}></e.Arrow>
-                            </a>
+                            </a> */}
 
                             <Grid >
                                 <Row center="xs" style={{    margin: 0}} >
@@ -156,11 +156,11 @@ class AboutPage extends Component {
                                         </p>
                                     </Col>
 
-                                    <a onClick={() => this.goTo('faq')}>
+                                    {/* <a onClick={() => this.goTo('faq')}>
                                         <e.Arrow
                                             color={'50749c'}
                                             angle={45}></e.Arrow>
-                                    </a>
+                                    </a> */}
                                 </Row>
                             </Grid>
 
@@ -170,7 +170,7 @@ class AboutPage extends Component {
 
                 <div id='faq'>
                     <e.Pre>
-                        <a onClick={() => this.goTo('openData')}>
+                        {/* <a onClick={() => this.goTo('openData')}>
                             <e.Arrow
                                 style={{
                                 top: '100px',
@@ -179,7 +179,7 @@ class AboutPage extends Component {
                                 color={'fff'}
                                 top
                                 angle={-135}></e.Arrow>
-                        </a>
+                        </a> */}
                         <e.FaqContainer>
 
                             <h1>FAQ</h1>

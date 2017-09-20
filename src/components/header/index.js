@@ -35,7 +35,7 @@ class Header extends Component {
     render() {
         // console.log('Header props: ',this.props)
         return (
-            <div>
+            <e.Container>
                 <e.Logo>
                     <Link to='/' replace>
                         <h1><img src={SodiLogo} alt='Logo'/>SODI</h1>
@@ -81,7 +81,7 @@ class Header extends Component {
                         <img src={FacebookLogo} alt='Facebook'/>
                     </a> */}
                 </e.SocialMedia>
-            </div>
+            </e.Container>
         )
     }
 }
