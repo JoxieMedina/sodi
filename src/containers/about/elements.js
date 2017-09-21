@@ -20,6 +20,10 @@ export const Container = styled.div`
     @media (max-width:570px){
         #about{
             padding-top:30px;
+            height: 80vh;   
+        }
+        #faq {
+            height: auto;    
         }
       
     }
@@ -263,12 +267,12 @@ export const CollapseItem = styled.div `
             font-size: 1em;
             margin-top: 10px;
             height:auto;
-            width:80%;
-            transition: 0.5s all;
+            width:80%;            
             ${props => props.expanded === false && `
             max-height: 0;
             color: transparent;
             `}
+            transition: 0.4s all;
 
         }      
         @media (max-width: 580px) {
@@ -276,6 +280,9 @@ export const CollapseItem = styled.div `
                     padding-left: 5px;   
                     font-size: 0.8em;
                     width: 100%;
+                    ${props => props.expanded === false && `
+                    display:none;
+                    `}
                 }
                 h5{
                     font-size: 1em;   

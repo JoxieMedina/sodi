@@ -12,6 +12,7 @@ class AboutPage extends Component {
         this.state = {
             expandedItem: -1
         }
+        this.openElem=null;
         this.scrollMan = new SScroll({})
 
         this.handleKeyDown = this
@@ -20,7 +21,15 @@ class AboutPage extends Component {
         this.goTo = this
             .goTo
             .bind(this)
+        this.isInViewport = this.isInViewport.bind(this)
     }
+
+    isInViewport(offset = 0) {
+        if (!this.openElem) return false;
+        const top = this.openElem.getBoundingClientRect().top;
+        return (top + offset) >= 0 && (top - offset) <= window.innerHeight;
+      }
+    
 
     getExpandedState(key) {
         return this.state.expandedItem === -1
@@ -108,7 +117,7 @@ class AboutPage extends Component {
 
                 </div>
 
-                <div id='openData'>
+                <div ref={(el) => this.openElem= el} id='openData'>
                     <e.WhiteWrapper>
                         <e.White >
                             {/* <a onClick={() => this.goTo('initiative')}>
@@ -116,7 +125,11 @@ class AboutPage extends Component {
                             </a> */}
 
                             <Grid >
-                                <Row center="xs" style={{    margin: 0}} >
+                                <Row
+                                    center="xs"
+                                    style={{
+                                    margin: 0
+                                }}>
                                     <Col xs={12}>
                                         <h2>Why Open Science Data Access?</h2>
                                         <span/>
@@ -137,10 +150,15 @@ class AboutPage extends Component {
                                             src={OpenAccessLogo}
                                             alt='OpenAccessLogo'/>
                                     </Col>
-                                    <Col style={{
-                                    paddingRight: '0',
-                                    paddingLeft: '0'
-                                }} xs={12} md={6} sm={6} lg={6}>
+                                    <Col
+                                        style={{
+                                        paddingRight: '0',
+                                        paddingLeft: '0'
+                                    }}
+                                        xs={12}
+                                        md={6}
+                                        sm={6}
+                                        lg={6}>
                                         <p>
                                             With datasets growing larger and larger, researchers are finding that the
                                             bottleneck to discovery is no longer a lack of data but an inability to manage,
@@ -211,7 +229,7 @@ class AboutPage extends Component {
                         </e.FaqContainer>
                     </e.Pre>
                 </div>
-                <Header/>
+                <Header openElem={this.openElem} />
             </e.Container>
 
         )
