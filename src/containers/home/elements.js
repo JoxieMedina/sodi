@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const HeaderTitle = styled.div `
-padding-top: 130px;
+    padding-top: 130px;
     img{
         width: 64px;
         display: inline-block;
@@ -41,10 +41,10 @@ padding-top: 130px;
 
 
     @media (max-width: 570px) {
-        padding-top:75px;
+        padding-top:30px;
       img{
           width:30px;
-          padding: 0 5px 0px 0px;
+          padding: 0 8px 0px 0px;
       }
      div{
         h1{
@@ -75,7 +75,11 @@ export const Button = styled.button `
             font-weight: 100;
             padding: 5px 15px 5px 15px;
             position: absolute;
-            right: 70px;
+            right: 100px;
+            @media(max-width:320px){
+                right: 75px;
+                
+            }
             ${props => props.top
     ? `
                 top: 50px;
@@ -83,9 +87,12 @@ export const Button = styled.button `
     : `bottom: 50px;
             @media (max-width: 921px) {
                 top: 50px;
-                left:70px;
+                left:98px;
                 bottom: auto;
                 right:auto;
+            }
+            @media(max-width:320px){
+                left: 67px;
             }
             `}
 
@@ -98,7 +105,7 @@ export const Button = styled.button `
         font-size: 1em;
         padding: 5px 10px 5px 10px;
         position: absolute;        
-        top: 125px;
+        top: 90px;
     }
             
 `
@@ -195,6 +202,9 @@ export const SocialMedia = styled.div `
             top:0;
             left: unset;
             bottom:unset;
+            .tw{
+                display:none;
+            }
         }
 
 `

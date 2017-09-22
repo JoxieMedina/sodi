@@ -10,26 +10,40 @@ class AboutPage extends Component {
     constructor() {
         super()
         this.state = {
-            expandedItem: -1
+            expandedItem: -1,
+            isOpenVisible: false,
+            showNav:true
         }
-        this.openElem=null;
+        this.openElem = null;
         this.scrollMan = new SScroll({})
 
-        this.handleKeyDown = this
-            .handleKeyDown
+        this.handleScroll = this
+            .handleScroll
             .bind(this)
         this.goTo = this
             .goTo
             .bind(this)
-        this.isInViewport = this.isInViewport.bind(this)
+        this.isInViewport = this
+            .isInViewport
+            .bind(this)
+            this.toggleNav = this.toggleNav.bind(this)
+
+        this.lastScrollTop = window.pageYOffset
     }
 
     isInViewport(offset = 0) {
-        if (!this.openElem) return false;
-        const top = this.openElem.getBoundingClientRect().top;
-        return (top + offset) >= 0 && (top - offset) <= window.innerHeight;
-      }
-    
+        if (!this.openElem) 
+            return false;
+        const height = this
+            .openElem
+            .getBoundingClientRect()
+            .height
+        const y = this
+            .openElem
+            .getBoundingClientRect()
+            .y
+        return y >= -height && y <= height
+    }
 
     getExpandedState(key) {
         return this.state.expandedItem === -1
@@ -42,11 +56,32 @@ class AboutPage extends Component {
             : this.setState({expandedItem: key})
     }
     componentDidMount() {
-        window.addEventListener('keydown', this.handleKeyDown);
+        // window.addEventListener('keydown', this.handleKeyDown);
+        window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('keydown', this.handleKeyDown);
+        //  window.removeEventListener('keydown', this.handleKeyDown);
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+    toggleNav(){
+        
+        this.setState({
+            showNav: !this.state.showNav
+        })
+    }
+    handleScroll() {
+        this.setState({
+            isOpenVisible: this.isInViewport()
+        })
+        var st = window.pageYOffset || document.documentElement.scrollTop
+        if (st > this.lastScrollTop && this.lastScrollTop > 150) {
+            // downscroll code
+            this.setState({
+                showNav: false
+            })
+        }
+        this.lastScrollTop = st;
     }
 
     goTo(id) {
@@ -62,9 +97,7 @@ class AboutPage extends Component {
             down = 40
        * @param {*} e
        */
-    handleKeyDown(e) {
-        console.log('Key', e)
-    }
+    //handleKeyDown(e) { console.log('Key', e) }
 
     render() {
 
@@ -117,14 +150,10 @@ class AboutPage extends Component {
 
                 </div>
 
-                <div ref={(el) => this.openElem= el} id='openData'>
+                <div ref={(el) => this.openElem = el} id='openData'>
                     <e.WhiteWrapper>
-                        <e.White >
-                            {/* <a onClick={() => this.goTo('initiative')}>
-                                <e.Arrow color={'50749c'} top angle={-135}></e.Arrow>
-                            </a> */}
-
-                            <Grid >
+                        <e.White > 
+                            <Grid className='cont-white'>
                                 <Row
                                     center="xs"
                                     style={{
@@ -137,10 +166,7 @@ class AboutPage extends Component {
                                 </Row>
                                 <Row
                                     center="xs"
-                                    style={{
-                                    marginRight: '0',
-                                    marginLeft: '0'
-                                }}>
+                                    className='content'>
                                     <Col xs={12} md={6} sm={6} lg={6}>
                                         <img
                                             style={{
@@ -229,7 +255,10 @@ class AboutPage extends Component {
                         </e.FaqContainer>
                     </e.Pre>
                 </div>
-                <Header openElem={this.openElem} />
+                <Header 
+                showNav={this.state.showNav}
+                toggleNav={this.toggleNav}
+                isOpenVisible={this.state.isOpenVisible}/>
             </e.Container>
 
         )

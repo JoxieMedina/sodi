@@ -56,7 +56,7 @@ class Home extends Component {
                     </Row>
                 </Grid>
                 <e.SocialMedia>
-                    <a rel="noopener" href={TW_LINK} target='_blank'>
+                    <a rel="noopener" className='tw' href={TW_LINK} target='_blank'>
                         <img src={TwitterLogo} alt='Twitter'/>
                     </a>
                     {/* <a rel="noopener" href={FB_LINK} target='_blank'>

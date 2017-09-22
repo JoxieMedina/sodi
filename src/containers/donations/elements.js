@@ -14,7 +14,7 @@ export const LeftPanel = styled.div `
     border-radius: 50%;
     position: absolute;
     float: right;
-    left: 5%;
+    left: 15%;
     p{
         font-size: 2em;
         font-weight: 100;
@@ -28,6 +28,9 @@ export const LeftPanel = styled.div `
     }
 
     @media (max-width: 1200px) {
+        left: 5%;
+    }
+    @media (max-width: 1800px) {
         max-width: 450px;
         height: 450px;
         top: 20%;
@@ -85,7 +88,10 @@ export const Circle = styled.div `
         border-radius: 50%;
         position: absolute;
         float: right;
-        right: 5%;
+        right: 15%;
+        @media (max-width: 1200px) {
+            right: 5%;
+        }
         h2{
             text-align: center;
             padding: 35px 41px 0px 0px;
@@ -110,7 +116,7 @@ export const Circle = styled.div `
                 outline: none;
             }
         }
-        @media (max-width: 1200px) {
+        @media (max-width: 1800px) {
             max-width: 450px;
             height: 450px;
             top: 20%;

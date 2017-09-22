@@ -13,8 +13,7 @@ class Header extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            showMenu: false,
-            showNav:true
+            showMenu: false
         }
         this.scrollMan = new SScroll({})
         this.toggleMenu = this
@@ -24,7 +23,7 @@ class Header extends Component {
         this.goTo = this
             .goTo
             .bind(this)
-            this.toggleNav = this.toggleNav.bind(this)
+     
     }
 
     toggleMenu() {
@@ -32,11 +31,7 @@ class Header extends Component {
             showMenu: !this.state.showMenu
         })
     }
-    toggleNav(){
-        this.setState({
-            showNav: !this.state.showNav
-        })
-    }
+   
     goTo(id) {
         this
             .scrollMan
@@ -46,7 +41,9 @@ class Header extends Component {
     render() {
         // console.log('Header props: ',this.props)
         return (
-            <e.Container show={this.state.showNav}>
+            <e.Container 
+            openVisible={this.props.isOpenVisible} 
+            show={this.props.showNav}>
                 <section>
                     <e.Logo>
                         <Link to='/' replace>
@@ -54,7 +51,7 @@ class Header extends Component {
                         </Link>
                     </e.Logo>
 
-                    <e.Nav show={this.state.showMenu}>
+                    <e.Nav    show={this.state.showMenu}>
                         <button onClick={this.toggleMenu}>
                             <img
                                 src={this.state.showMenu
@@ -89,7 +86,10 @@ class Header extends Component {
                         </a>
                     </e.SocialMedia>
 
-                    <e.Arrow onClick={() => this.toggleNav()} color={'fff'} show={this.state.showNav} angle={45}><i/></e.Arrow>
+                    <e.Arrow 
+                    onClick={this.props.toggleNav} 
+                    color={this.props.isOpenVisible?'21436c':'fff'} 
+                    show={this.props.showNav} angle={45}><i/></e.Arrow>
 
                 </section>
                 <e.SocialMedia>

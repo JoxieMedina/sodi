@@ -25,6 +25,9 @@ export const Container = styled.div`
         #faq {
             height: auto;    
         }
+        #openData{
+            height:auto;
+        }
       
     }
 
@@ -149,6 +152,11 @@ export const Arrow = styled.i `
 
 export const White = styled.div`
     padding-top:70px;
+    .cont-white{
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+    }
     @media(max-width:570px){   
         padding-top: 0;
      }
@@ -174,21 +182,29 @@ export const WhiteWrapper = styled.div `
             font-size: 1.2em;
         }
         img{
-            padding-top: 66px;
+            padding-top: 30px;
+        }
+        .content{
+            margin-right: 0px;
+            margin-left: 0px;
+            margin-top: 80px;
         }
         @media (max-width: 580px) {
-            // height: 800px;
+            height: auto;
             margin-top: 66px;
             
             img{
                 padding-top: 0px !important;
-                width: 50px;
+                width: 100px;
             }
             p{
                 background: white;
                 text-align: left;
                 font-size: 1em;
                 padding: 10px;
+            }
+            .content{                
+                margin-top: 30px;
             }
           
         }

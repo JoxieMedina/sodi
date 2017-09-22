@@ -2,7 +2,10 @@ import styled from 'styled-components'
 
 export const Container = styled.div `
    section{
-    background: rgba(47, 82, 127, 0.6);
+    background: ${props => props.openVisible
+        ? `rgba(80,116,156,0.9)`
+        : `transparent`};
+    
     width: 100%;
     height: 75px;
     position: fixed;
@@ -13,81 +16,81 @@ export const Container = styled.div `
 
 export const SocialMedia = styled.div `
 
-width: auto;
-position: fixed;
-${props => props.top
-    ? `
-    top: 0;
-    right: 0;
-    padding: 30px 20px;
-    position: relative;
-    display:inline-block;
-    @media (max-width: 750px) {
-        top:auto;
-        bottom: 0;
-     }
-`
-    : `
-    padding: 20px;
-    bottom: 0;
-    left: 0;
-`}
-
-
-img{    
-    
+    width: auto;
+    position: fixed;
     ${props => props.top
         ? `
-        padding-left: 12px;        
+        top: 0;
+        right: 0;
+        padding: 30px 20px;
+        
+        display:inline-block;
+        @media (max-width: 750px) {
+            top:auto;
+            bottom: 0;
+        }
     `
         : `
-        padding-right: 12px;
+        padding: 20px;
+        bottom: 0;
+        left: 0;
     `}
-    max-height: 18px;
-    width: 18px;
-    cursor:pointer;
-}
+
+
+    img{    
+        
+        ${props => props.top
+            ? `
+            padding-left: 12px;        
+        `
+            : `
+            padding-right: 12px;
+        `}
+        max-height: 18px;
+        width: 18px;
+        cursor:pointer;
+    }
 `
 
 export const Logo = styled.div `
-top: 0;
-width: auto;
-position: relative;
-display:inline-block;
-padding: 20px;
-left: 0;
-h1{
-    margin: 0;
-    font-size: 25px;
-	font-weight: 100;
-	text-align: left;
-	color: #ffffff;
-}
-img{    
-    margin: 0px 10px -10px 0px;
-    max-height: 37px;
+    top: 0;
     width: auto;
-    cursor:pointer;
-}
-a{
-    text-decoration: none;
-    color: white;
-}
-
-@media(max-width:570px){
-    img{
-        margin: 0px 10px -9px 0px;
-        max-height: 30px;
-    }
+    position: relative;
+    display:inline-block;
+    padding: 20px;
+    left: 0;
     h1{
-        font-size:17px;
+        margin: 0;
+        font-size: 25px;
+        font-weight: 100;
+        text-align: left;
+        color: #ffffff;
     }
-}
+    img{    
+        margin: 0px 10px -10px 0px;
+        max-height: 37px;
+        width: auto;
+        cursor:pointer;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+    @media(max-width:570px){
+        img{
+            margin: 0px 10px -9px 0px;
+            max-height: 30px;
+        }
+        h1{
+            font-size:17px;
+        }
+    }
 `
 
 export const Nav = styled.div `
     top: 0px;
-    width: auto;
+    width: 77%;
     position: relative;
     display:inline-block;
     padding-top: 0px;    
@@ -114,8 +117,8 @@ export const Nav = styled.div `
     img{
         max-width:30px;
     }
-    a + a + a + a{
-        margin-left: 250px;
+    a + a + a + a{        
+        float:right;
     }
 
     @media (max-width: 940px) {
@@ -126,9 +129,11 @@ export const Nav = styled.div `
     @media (max-width: 750px) {
         right: 0;
         left: auto;
+        float: right;
         padding:0;
-        position: fixed;
+        position: relative;
         text-align:right;
+        width:auto;
     button{
         display:inline;
         padding: 10px 10px 0px 0px;
@@ -140,7 +145,7 @@ export const Nav = styled.div `
         }
     }
       div{
-        display:${props => props.show === true
+        display:${props => props.show
     ? `block`
     : `none`};
         left: auto;
@@ -163,23 +168,24 @@ export const Nav = styled.div `
 `
 
 export const Arrow = styled.a `
-position: absolute;
-margin: 0 auto;
-left: 0;
-right: 0;
-top: 80px;
-height: 30px;
-width: 30px;
-i{
-    border: solid ${props => `#${props.color}`};
-    box-sizing: border-box;
-    border-width: 0 2px 2px 0;
-    display: inline-block;    
-    outline: none;
-    cursor: pointer;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: ${props=>props.show?'7px':'80px'};
     height: 30px;
-    width: 30px;    
-    transform: ${props=>props.show?'rotate(225deg)':'rotate(45deg)'};
-    transition:transform 1s;
-}
+    width: 30px;
+    transition:top 1s;
+    i{
+        border: solid ${props => `#${props.color}`};
+        box-sizing: border-box;
+        border-width: 0 2px 2px 0;
+        display: inline-block;    
+        outline: none;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;    
+        transform: ${props=>props.show?'rotate(225deg)':'rotate(45deg)'};
+        transition:transform 1s;
+    }
 `
