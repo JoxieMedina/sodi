@@ -77,7 +77,7 @@ class Header extends Component {
                             </Link>
                         </div>
                     </e.Nav>
-                    <e.SocialMedia top>
+                    <e.SocialMedia show={this.props.showNav} top>
                         <a rel="noopener" href={SLACK_LINK} target='_blank'>
                             <img src={SlackLogo} alt='Slack'/>
                         </a>
@@ -92,7 +92,7 @@ class Header extends Component {
                     show={this.props.showNav} angle={45}><i/></e.Arrow>
 
                 </section>
-                <e.SocialMedia>
+                <e.SocialMedia show={this.props.showNav}>
                     <a rel="noopener" href={TW_LINK} target='_blank'>
                         <img src={TwitterLogo} alt='Twitter'/>
                     </a>

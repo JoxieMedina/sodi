@@ -18,21 +18,23 @@ export const SocialMedia = styled.div `
 
     width: auto;
     position: fixed;
+    bottom: ${props => props.show?'0':'-100px'};
+    transition:all 1s;
     ${props => props.top
         ? `
-        top: 0;
+        top: ${ props.show?'0':'-100px'};
         right: 0;
         padding: 30px 20px;
         
         display:inline-block;
         @media (max-width: 750px) {
             top:auto;
-            bottom: 0;
+            bottom: ${ props.show?'0':'-100px'};
         }
     `
         : `
-        padding: 20px;
-        bottom: 0;
+        padding: 20px;        
+       
         left: 0;
     `}
 

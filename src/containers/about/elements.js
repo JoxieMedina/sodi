@@ -19,14 +19,12 @@ export const Container = styled.div`
 
     @media (max-width:570px){
         #about{
-            padding-top:30px;
-            height: 80vh;   
+            padding-top: 15vh;
+            height: 85vh;  
         }
-        #faq {
+          #openData
+        ,#faq {
             height: auto;    
-        }
-        #openData{
-            height:auto;
         }
       
     }
@@ -191,7 +189,7 @@ export const WhiteWrapper = styled.div `
         }
         @media (max-width: 580px) {
             height: auto;
-            margin-top: 66px;
+            margin-top: 0;
             
             img{
                 padding-top: 0px !important;
@@ -215,12 +213,12 @@ export const WhiteWrapper = styled.div `
  background-color: rgba(80,116,156,0.9);
  padding:50px;
  padding-top:0;
- margin-top: 25px;
+ margin-top: 0;
 
  @media(max-width:570px){    
     padding: 25px;
     padding-top: 0;
-    margin-top: 66px;
+    margin-top: 0;
     position: relative;
  }
 
