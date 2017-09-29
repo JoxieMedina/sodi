@@ -135,7 +135,7 @@ export const Arrow = styled.i `
     top: 5%;
     `}
     ${props => props.bottom && `
-    bottom: 5%;
+    bottom: -110px;
     @media (max-width: 580px) {
         bottom: 9%;
     }

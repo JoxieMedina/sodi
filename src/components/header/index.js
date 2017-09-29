@@ -86,10 +86,10 @@ class Header extends Component {
                         </a>
                     </e.SocialMedia>
 
-                    <e.Arrow 
+                    {/* <e.Arrow 
                     onClick={this.props.toggleNav} 
                     color={this.props.isOpenVisible?'21436c':'fff'} 
-                    show={this.props.showNav} angle={45}><i/></e.Arrow>
+                    show={this.props.showNav} angle={45}><i/></e.Arrow> */}
 
                 </section>
                 <e.SocialMedia show={this.props.showNav}>
