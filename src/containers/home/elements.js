@@ -94,6 +94,9 @@ export const Button = styled.button `
             @media(max-width:320px){
                 left: 67px;
             }
+            @media(max-width:570px){
+                margin-right: unset !important;
+            }
             `}
 
     a{
@@ -104,8 +107,12 @@ export const Button = styled.button `
     @media(max-width:570px){
         font-size: 1em;
         padding: 5px 10px 5px 10px;
-        position: absolute;        
-        top: 90px;
+        position: relative;
+        margin-right: 33px;
+        top: unset;
+        left: unset;
+        display: inline-block;
+        right: unset;
     }
             
 `

@@ -122,7 +122,7 @@ class AboutPage extends Component {
                         </button>
                     </e.GoalContainer>
                     <a onClick={() => this.goTo('openData')}>
-                        <e.Arrow bottom color={'ffffff'} angle={45}></e.Arrow>
+                        <e.Arrow style={{bottom: '-110px'}}  showNav={this.state.showNav} bottom color={'ffffff'} angle={45}></e.Arrow>
                     </a> 
 
                 </div>
@@ -130,10 +130,11 @@ class AboutPage extends Component {
                 <div id='initiative'>
 
                     <e.IniContainer>
-                        <a onClick={() => this.goTo('about')}>
-                            <e.Arrow color={'fff'} top angle={-135}></e.Arrow>
-                        </a>
+                        
                         <section>
+                        <a onClick={() => this.goTo('about')}>
+                            <e.Arrow showNav={this.state.showNav} color={'fff'} top angle={-135}></e.Arrow>
+                        </a>
                             <h1>About the initiative</h1>
                             <p>Scientific data is locked in knowledge silos, spread across countless
                                 disconnected databases on the web. Creating a high-level layer of interconnected
@@ -148,7 +149,7 @@ class AboutPage extends Component {
                                 everyone.
                             </p>
                             <a onClick={() => this.goTo('openData')}>
-                                <e.Arrow bottom color={'ffffff'} angle={45}></e.Arrow>
+                                <e.Arrow showNav={this.state.showNav} bottom color={'ffffff'} angle={45}></e.Arrow>
                             </a>
                         </section>
 
@@ -160,7 +161,7 @@ class AboutPage extends Component {
                     <e.WhiteWrapper>                   
                         <e.White > 
                         <a onClick={() => this.goTo('initiative')}>
-                            <e.Arrow color={'50739c'} top angle={-135}></e.Arrow>
+                            <e.Arrow showNav={this.state.showNav} color={'50739c'} top angle={-135}></e.Arrow>
                         </a>
                             <Grid className='cont-white'>
                                 <Row
@@ -211,6 +212,7 @@ class AboutPage extends Component {
 
                                     <a onClick={() => this.goTo('faq')}>
                                         <e.Arrow
+                                        showNav={this.state.showNav}
                                         bottom
                                             color={'50749c'}
                                             angle={45}></e.Arrow>
@@ -226,6 +228,7 @@ class AboutPage extends Component {
                     <e.Pre>
                         <a onClick={() => this.goTo('openData')}>
                             <e.Arrow
+                            showNav={this.state.showNav}
                                 style={{
                                 top: '100px',
                                 zIndex: 2

@@ -13,10 +13,8 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
-                <e.Button top>
-                    <Link to='/donations'>Donate</Link>
-                </e.Button>
+            <div style={{textAlign:'center'}} >
+               
                 <Grid fluid>
                     <Row>
                         <Col xs={12}>
@@ -63,6 +61,9 @@ class Home extends Component {
                         <img src={FacebookLogo} alt='Facebook'/>
                     </a> */}
                 </e.SocialMedia>
+                <e.Button top>
+                    <Link to='/donations'>Donate</Link>
+                </e.Button>
                 <e.Button>
                 <Link to='/about'>About</Link>
                 </e.Button>

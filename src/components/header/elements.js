@@ -2,10 +2,8 @@ import styled from 'styled-components'
 
 export const Container = styled.div `
    section{
-    background: ${props => props.openVisible
-        ? `rgba(80,116,156,0.9)`
-        : `transparent`};
-    
+    // background: ${props => props.openVisible ? `rgba(80,116,156,1)`: `transparent`};
+    background:rgba(80,116,156,1);
     width: 100%;
     height: 75px;
     position: fixed;

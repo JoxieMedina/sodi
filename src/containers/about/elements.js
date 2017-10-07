@@ -125,6 +125,16 @@ export const Arrow = styled.i `
     height: 30px;
     width: 30px;
     left: 50%;
+    transition: all .2s;
+    ${props=>props.showNav?`
+    border-width: 0 2px 2px 0;
+    height: 30px;
+    width: 30px;
+    `:`
+    border-width: 0;
+    height: 0px;
+    width: 0px;
+    `}
     position: relative;
     @media (max-width: 580px) {
         display:none;
@@ -132,10 +142,10 @@ export const Arrow = styled.i `
         bottom:unset;
     }
     ${props => props.top && `
-    top: 5%;
+   // top: 5%;
     `}
     ${props => props.bottom && `
-    bottom: -110px;
+   // bottom: -110px;
     @media (max-width: 580px) {
         bottom: 9%;
     }
@@ -149,7 +159,13 @@ export const Arrow = styled.i `
  */
 
 export const White = styled.div`
-    padding-top:70px;
+    // padding-top:70px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
     .cont-white{
         margin: auto;
         width: 80%;
@@ -157,6 +173,9 @@ export const White = styled.div`
     }
     @media(max-width:570px){   
         padding-top: 0;
+        position:unset;
+        transform:unset;
+        top:unset;
      }
 
 `
@@ -185,7 +204,7 @@ export const WhiteWrapper = styled.div `
         .content{
             margin-right: 0px;
             margin-left: 0px;
-            margin-top: 80px;
+            margin-top: 30px;
         }
         @media (max-width: 580px) {
             height: auto;
@@ -315,12 +334,17 @@ export const IniContainer = styled.div `
         right: 0;
         color:white;
         text-align:left;
-        padding-top: 110px;
+        // padding-top: 110px;
 
         section{
-            max-width:700px;
-            margin:0 auto;
+            max-width:700px;            
             text-align:left;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            margin: 0 auto;
+            right: 0;
+            left: 0;
                 h1{
                     padding-right: 60px;
                     text-align: left;
