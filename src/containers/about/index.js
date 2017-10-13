@@ -94,6 +94,12 @@ class AboutPage extends Component {
         this
             .scrollMan
             .scrollTo(id)
+            setTimeout(()=> {
+                console.log('state')
+                this.setState({
+                    showNav: true
+                })
+            }, 1000);
     }
 
     /**
@@ -226,19 +232,15 @@ class AboutPage extends Component {
 
                 <div id='faq'>
                     <e.Pre>
+                      
+                        <e.FaqContainer>
                         <a onClick={() => this.goTo('openData')}>
                             <e.Arrow
-                            showNav={this.state.showNav}
-                                style={{
-                                top: '100px',
-                                zIndex: 2
-                            }}
+                                showNav={this.state.showNav}
+                               
                                 color={'fff'}
-                                top
                                 angle={-135}></e.Arrow>
                         </a>
-                        <e.FaqContainer>
-
                             <h1>FAQ</h1>
                             {faqs.map(faq => {
                                 return (
@@ -271,6 +273,7 @@ class AboutPage extends Component {
                 <Header 
                 showNav={this.state.showNav}
                 toggleNav={this.toggleNav}
+                goTo={this.goTo}
                 isOpenVisible={this.state.isOpenVisible}/>
             </e.Container>
 

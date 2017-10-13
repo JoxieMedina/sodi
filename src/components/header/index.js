@@ -20,10 +20,10 @@ class Header extends Component {
             .toggleMenu
             .bind(this)
 
-        this.goTo = this
-            .goTo
+        this.goToCustom = this
+            .goToCustom
             .bind(this)
-     
+
     }
 
     toggleMenu() {
@@ -31,19 +31,21 @@ class Header extends Component {
             showMenu: !this.state.showMenu
         })
     }
-   
-    goTo(id) {
-        this
-            .scrollMan
-            .scrollTo(id)
+
+    goToCustom(id) {
+        this.props.goTo
+            ? this
+                .props
+                .goTo(id)
+            : this
+                .scrollMan
+                .scrollTo(id)
         this.toggleMenu()
     }
     render() {
         // console.log('Header props: ',this.props)
         return (
-            <e.Container 
-            openVisible={this.props.isOpenVisible} 
-            show={this.props.showNav}>
+            <e.Container openVisible={this.props.isOpenVisible} show={this.props.showNav}>
                 <section>
                     <e.Logo>
                         <Link to='/' replace>
@@ -51,7 +53,7 @@ class Header extends Component {
                         </Link>
                     </e.Logo>
 
-                    <e.Nav    show={this.state.showMenu}>
+                    <e.Nav show={this.state.showMenu}>
                         <button onClick={this.toggleMenu}>
                             <img
                                 src={this.state.showMenu
@@ -62,14 +64,14 @@ class Header extends Component {
                         <div>
                             <a
                                 onClick={() => {
-                                this.goTo('about')
+                                this.goToCustom('about')
                             }}>
                                 <h1>About</h1>
                             </a>
-                            <a onClick={() => this.goTo('openData')}>
+                            <a onClick={() => this.goToCustom('openData')}>
                                 <h1>Open access</h1>
                             </a>
-                            <a onClick={() => this.goTo('faq')}>
+                            <a onClick={() => this.goToCustom('faq')}>
                                 <h1>FAQ</h1>
                             </a>
                             <Link to='/donations'>
@@ -86,9 +88,9 @@ class Header extends Component {
                         </a>
                     </e.SocialMedia>
 
-                    {/* <e.Arrow 
-                    onClick={this.props.toggleNav} 
-                    color={this.props.isOpenVisible?'21436c':'fff'} 
+                    {/* <e.Arrow
+                    onClick={this.props.toggleNav}
+                    color={this.props.isOpenVisible?'21436c':'fff'}
                     show={this.props.showNav} angle={45}><i/></e.Arrow> */}
 
                 </section>
