@@ -61,12 +61,18 @@ export const LeftPanel = styled.div `
     }
 
     @media (max-width: 456px) {
-        max-width: 100%;
-        height: 100%;
-        top: 17%;
+        max-width: 100vw;
+        height: auto;
+        padding-bottom: 53px;
         border: 0;
-        border-radius:0;
+        border-radius: 0;
         text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        margin: 0 auto;
+        right: 0;
+        left: 0;
         p {
             padding: 55px 20px 9px 20px;
             font-size: 1em;
@@ -153,7 +159,10 @@ export const Circle = styled.div `
                 font-size: 1em;
             }
             section{
-                padding-left:10px !important;
+                padding-left:20px;
+                form{
+                    text-align: center;
+                }
             }
         }
         @media (max-width: 910px) {
@@ -179,6 +188,9 @@ export const Button = styled.button `
         font-size: 1.2em;
         border: solid #fff 1px;
         border-radius: 5px;
+        @media (max-width: 456px) {
+            font-size: 1em;
+        }
         background: ${props => props.selected
     ? '#50749c'
     : 'transparent'};

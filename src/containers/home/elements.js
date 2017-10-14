@@ -41,7 +41,7 @@ export const HeaderTitle = styled.div `
 
 
     @media (max-width: 570px) {
-        padding-top:30px;
+        padding-top:50px;
       img{
           width:30px;
           padding: 0 8px 0px 0px;
@@ -95,7 +95,7 @@ export const Button = styled.button `
                 left: 67px;
             }
             @media(max-width:570px){
-                margin-right: unset !important;
+                margin: unset !important;
             }
             `}
 
@@ -105,11 +105,12 @@ export const Button = styled.button `
     }
 
     @media(max-width:570px){
-        font-size: 1em;
+        font-size: 12px;
         padding: 5px 10px 5px 10px;
         position: relative;
-        margin-right: 33px;
-        top: unset;
+        margin-left: 58px ;
+        border-radius: 3px;
+        top: 10px;
         left: unset;
         display: inline-block;
         right: unset;

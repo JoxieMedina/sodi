@@ -95,7 +95,6 @@ class AboutPage extends Component {
             .scrollMan
             .scrollTo(id)
             setTimeout(()=> {
-                console.log('state')
                 this.setState({
                     showNav: true
                 })
@@ -236,8 +235,8 @@ class AboutPage extends Component {
                         <e.FaqContainer>
                         <a onClick={() => this.goTo('openData')}>
                             <e.Arrow
-                                showNav={this.state.showNav}
-                               
+                                showNav={true}
+                                style={{    top: '50px'}}
                                 color={'fff'}
                                 angle={-135}></e.Arrow>
                         </a>

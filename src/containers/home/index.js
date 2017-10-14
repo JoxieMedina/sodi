@@ -61,12 +61,13 @@ class Home extends Component {
                         <img src={FacebookLogo} alt='Facebook'/>
                     </a> */}
                 </e.SocialMedia>
-                <e.Button top>
-                    <Link to='/donations'>Donate</Link>
-                </e.Button>
                 <e.Button>
                 <Link to='/about'>About</Link>
                 </e.Button>
+                <e.Button top>
+                    <Link to='/donations'>Donate</Link>
+                </e.Button>
+                
             </div>
         )
     }

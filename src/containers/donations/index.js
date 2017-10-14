@@ -135,7 +135,7 @@ class Donations extends Component {
 
                     {this.state.step === 2 && <div>
                         <h2 style={{padding: '35px 0px 0px 0px'}} >ACCOUNT DETAILS</h2>
-                        <section style={{paddingLeft: '33px'}} >
+                        <section style={{paddingLeft: '0px'}} >
                             <Cards
                                 number={number}
                                 name={name}
